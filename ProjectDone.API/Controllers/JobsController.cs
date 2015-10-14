@@ -20,6 +20,14 @@ namespace ProjectDone.API.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [AllowAnonymous]
+        [Route("api/Jobs/All")]
+        public List<JobResponse> GetAllJobs()
+        {
+            Mapper.CreateMap<Job, JobResponse>();
+            return Mapper.Map<List<JobResponse>>(db.Jobs);
+        }
+
         // GET: api/Jobs
         public List<JobResponse> GetJobs()
         {

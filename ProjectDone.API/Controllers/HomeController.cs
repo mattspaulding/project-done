@@ -10,7 +10,7 @@ namespace ProjectDone.API.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Angular Material DotNet API";
+            ViewBag.Title = "Project Done API";
 
             return View();
         }
