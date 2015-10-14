@@ -1,0 +1,48 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+
+
+}
+
+body {
+  /* Fix for md-toaster */
+  overflow:hidden;
+ 
+}
+
+h1,h2,h3,h4,h5,p{
+    color:brown;
+}
+
+
+
+    /* view transitions*/
+
+    .fade-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;
+}
+.fade-view.ng-enter,
+.fade-view.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.fade-view.ng-enter {
+    opacity: 0;
+}
+.fade-view.ng-enter-active {
+    opacity: 1;
+}
+.fade-view.ng-leave {
+    opacity: 1;
+}
+.fade-view.ng-leave-active {
+    opacity: 0;
+}

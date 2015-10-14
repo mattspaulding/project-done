@@ -1,0 +1,25 @@
+﻿<div layout="row">
+    <div flex flex-gt-sm="50" offset-gt-sm="25">
+        <form name="form">
+            <h2>Job Details</h2>
+            <!--<md-input-container flex>
+                <label>JobId</label>
+                <input disabled ng-model="job.jobId">
+            </md-input-container>-->
+            <md-input-container flex>
+                <label>Name</label>
+                <input disabled ng-model="job.name">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Description</label>
+                <input disabled ng-model="job.description">
+            </md-input-container>
+            <div layout="row" layout-align="end">
+                <md-button class="md-warn" data-ng-click="deleteJob(job)">Delete</md-button>
+                <md-button class="md-accent" data-ng-click="go('/jobs/edit/'+job.jobId)">Edit</md-button>
+                <md-button class="md-primary md-raised" type="submit" data-ng-click="go('/jobs')">Back</md-button>
+            </div>
+
+        </form>
+    </div>
+</div>

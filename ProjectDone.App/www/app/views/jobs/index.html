@@ -1,0 +1,34 @@
+﻿<div>
+    <div layout="row" layout-sm="column" layout-align="center center" ng-show="data.loading">
+        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+    </div>
+    <md-list class="md-primary" flex>
+        <md-subheader class="md-no-sticky">All Jobs</md-subheader>
+        <md-list-item  ng-click="go('/jobs/details/'+job.jobId)"class="md-primary md-3-line md-whiteframe-z1"  ng-repeat="job in jobs">
+            <ng-md-icon icon="details" style="fill:#23B9A3;" class="md-avatar"></ng-md-icon>
+  <div class="md-list-item-text">
+                <h3>{{job.name}}</h3>
+                <p>{{job.description}}</p>
+            </div>
+              <!--<p class="md-no-sticky">{{job.name}}</p>
+            <p class="md-no-sticky">{{job.description}}</p>-->
+            <!--<div flex>
+                <md-button aria-label="Details" class="md-icon-button">
+                    <ng-md-icon icon="details" style="fill:#23B9A3;" ng-click="go('/jobs/details/'+job.jobId)"></ng-md-icon>
+                </md-button>
+                <md-button aria-label="Edit" class="md-icon-button">
+                    <ng-md-icon icon="edit" style="fill:#23B9A3;" ng-click="go('/jobs/edit/'+job.jobId)"></ng-md-icon>
+                </md-button>
+                <md-button aria-label="Delete" class="md-icon-button">
+                    <ng-md-icon icon="delete" style="fill:#23B9A3;" ng-click="deleteJob(job)"></ng-md-icon>
+                </md-button>
+            </div>-->
+        </md-list-item>
+    </md-list>
+    <div layout="row" layout-align="end">
+        <md-button class="md-fab md-fab-top-right md-primary md-icon-button" >
+            <ng-md-icon icon="plus_one" size="50" style="fill:white;" ng-click="go('/jobs/add')">   </ng-md-icon>
+</md-button>
+    </div>
+
+</div>
