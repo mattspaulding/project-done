@@ -5,7 +5,8 @@
     <md-list class="md-primary" flex>
         <md-subheader class="md-no-sticky">All Jobs</md-subheader>
         <md-list-item  ng-click="go('/jobs/details/'+job.jobId)"class="md-primary md-3-line md-whiteframe-z1"  ng-repeat="job in jobs">
-            <ng-md-icon icon="details" style="fill:#23B9A3;" class="md-avatar"></ng-md-icon>
+            <img ng-src="http://lorempixel.com/100/100/nature/{{job.jobId}}" class="md-avatar" />
+
   <div class="md-list-item-text">
                 <h3>{{job.name}}</h3>
                 <p>{{job.description}}</p>

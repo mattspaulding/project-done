@@ -11,8 +11,47 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="content/css/site.css" rel="stylesheet" />
+
+    <!-- 3rd party libraries -->
+    <script src="cordova.js"></script>
+    <!-- Bower Components -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="/bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/jobsService.js"></script>
+    <script src="app/services/valuesService.js"></script>
+    <script src="app/services/userService.js"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/userController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/signupController.js"></script>
+    <script src="app/controllers/jobsController.js"></script>
+    <script src="app/controllers/valuesController.js"></script>
+    <script src="app/controllers/sideNavLeftController.js"></script>
+    <!-- Load custom filters -->
+    <script src="app/filters/reverseFilter.js"></script>
+    <!-- Load custom directives -->
 </head>
-<body ng-app="App" layout="row" ng-controller="indexController">
+<body ng-app="App" ng-cloak layout="row" ng-controller="indexController">
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
                 md-component-id="left"
                 style="background-color:#8D6E63"
@@ -138,43 +177,6 @@
             </div>
     </div>
 
-    <!-- 3rd party libraries -->
-    <script src="cordova.js"></script>
-    <!-- Bower Components -->
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-aria/angular-aria.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/angular-material/angular-material.js"></script>
-    <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
-    <script src="/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
-    <script src="/bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/moment/moment.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
-    <!-- Load app main script -->
-    <script src="app/app.js"></script>
-    <!-- Load services -->
-    <script src="app/services/authInterceptorService.js"></script>
-    <script src="app/services/authService.js"></script>
-    <script src="app/services/jobsService.js"></script>
-    <script src="app/services/valuesService.js"></script>
-    <script src="app/services/userService.js"></script>
-    <!-- Load controllers -->
-    <script src="app/controllers/indexController.js"></script>
-    <script src="app/controllers/homeController.js"></script>
-    <script src="app/controllers/userController.js"></script>
-    <script src="app/controllers/loginController.js"></script>
-    <script src="app/controllers/signupController.js"></script>
-    <script src="app/controllers/jobsController.js"></script>
-    <script src="app/controllers/valuesController.js"></script>
-    <script src="app/controllers/sideNavLeftController.js"></script>
-    <!-- Load custom filters -->
-    <script src="app/filters/reverseFilter.js"></script>
-    <!-- Load custom directives -->
+   
 </body>
 </html>
