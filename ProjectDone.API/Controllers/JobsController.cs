@@ -12,11 +12,13 @@ using ProjectDone.API.Models;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
 using System.Web;
+using System.IO;
+using System.Drawing;
+using System.Web.Hosting;
 
 namespace ProjectDone.API.Controllers
 {
-    [Authorize]
-    public class JobsController : ApiController
+      public class JobsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -93,14 +95,44 @@ namespace ProjectDone.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Jobs
-        [ResponseType(typeof(Job))]
+        [AllowAnonymous]
+        [Route("api/Jobs/Image")]
+        public HttpResponseMessage UploadImage()
+        {
+
+            HttpResponseMessage result = null;
+            var httpRequest = HttpContext.Current.Request;
+            if (httpRequest.Files.Count > 0)
+            {
+                var fullFilename = "";
+                foreach (string file in httpRequest.Files)
+                {
+                    var postedFile = httpRequest.Files[file];
+                    var filePath = HttpContext.Current.Server.MapPath("~/JobImages/" + postedFile.FileName + "_" + DateTime.Now.ToFileTimeUtc());
+                    postedFile.SaveAs(filePath);
+
+                    fullFilename = postedFile.FileName + "_" + DateTime.Now.ToFileTimeUtc();
+                }
+                result = Request.CreateResponse(HttpStatusCode.Created, fullFilename);
+            }
+            else
+            {
+                result = Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+            return result;
+        }
+
+    
+
+    // POST: api/Jobs
+    [ResponseType(typeof(Job))]
         public IHttpActionResult PostJob(JobRequest jobRequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
             Mapper.CreateMap<JobRequest, Job>();
             var job = Mapper.Map<Job>(jobRequest);
             // Set creation date

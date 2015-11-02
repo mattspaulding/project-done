@@ -27,6 +27,7 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
     "jquery": "~2.1.4",
-    "svg-morpheus": "~0.1.8"
+    "svg-morpheus": "~0.1.8",
+    "ng-file-upload": "~9.0.10"
   }
 }

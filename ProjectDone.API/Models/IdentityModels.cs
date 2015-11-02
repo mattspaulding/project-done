@@ -18,7 +18,12 @@ namespace ProjectDone.API.Models
             return userIdentity;
         }
 
-        public virtual List<Value> Values { get; set; }
+
+
+        public virtual ICollection<Value> Values { get; set; }
+        public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<Bid> Bids { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -30,6 +35,7 @@ namespace ProjectDone.API.Models
 
         public DbSet<Value> Values { get; set; }
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<Bid> Bids { get; set; }
 
 
         public static ApplicationDbContext Create()

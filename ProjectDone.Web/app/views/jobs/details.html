@@ -1,9 +1,28 @@
 ﻿<div layout="row">
     <div flex flex-gt-sm="50" offset-gt-sm="25">
-        <form name="form">
+
+        <md-list class="md-primary" flex>
+            <md-subheader class="md-no-sticky">Bids</md-subheader>
+            <md-list-item class="md-primary md-3-line md-whiteframe-z1" ng-repeat="bid in bids">
+                <img ng-src="http://lorempixel.com/100/100/people/{{bid.bidId}}" class="md-avatar" style="width:60px;height:60px;" />
+
+                <div class="md-list-item-text">
+                    <div flex layout="row">
+                        <h4 flex="75">{{bid.name}}</h4>
+                        <h3 flex style="text-align:right;">${{bid.amount}}</h3>
+                    </div>
+                    <p>{{bid.description}}</p>
+                    <div flex layout="row">
+                        <div flex="50"><img src="app/images/badges.png" width="70px" /></div>
+                        <div flex style="text-align:right;"><img src="app/images/five-stars.jpg" width="100px" /></div>
+                    </div>
+                </div>
+            </md-list-item>
+        </md-list>
+         <form name="form">
             <h2>Job Details</h2>
-            <div flex layout="row" layout-align="center">
-                <img ng-src="http://lorempixel.com/400/400/nature/{{job.jobId}}" class="md-avatar" style="max-width:100%;" />
+            <div flex layout="row" height="300px;" layout-align="center">
+                <img ng-src="http://lorempixel.com/300/300/nature/{{job.jobId}}" class="md-avatar" />
             </div>
             <md-input-container flex>
                 <label>Name</label>
@@ -20,5 +39,7 @@
             </div>
 
         </form>
+
+
     </div>
 </div>

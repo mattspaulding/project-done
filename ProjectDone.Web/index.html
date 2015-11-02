@@ -30,6 +30,7 @@
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     <!-- Load app main script -->
     <script src="app/app.js"></script>
     <!-- Load services -->
@@ -38,6 +39,7 @@
     <script src="app/services/jobsService.js"></script>
     <script src="app/services/valuesService.js"></script>
     <script src="app/services/userService.js"></script>
+    <script src="app/services/fileUploadService.js"></script>
     <!-- Load controllers -->
     <script src="app/controllers/indexController.js"></script>
     <script src="app/controllers/homeController.js"></script>
@@ -50,6 +52,8 @@
     <!-- Load custom filters -->
     <script src="app/filters/reverseFilter.js"></script>
     <!-- Load custom directives -->
+    <script src="app/directives/fileModelDirective.js"></script>
+
 </head>
 <body ng-app="App" ng-cloak layout="row" ng-controller="indexController">
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
@@ -91,7 +95,7 @@
                     <span style="font-size:18px;color:white;">My Jobs</span>
                 </div>
             </div>
-            <div class="md-toolbar-tools" ng-click="go('/jobs/add');menuToggle();" ng-hide="!authentication.isAuth">
+            <div class="md-toolbar-tools" ng-click="go('/jobs/imageUpload');menuToggle();" ng-hide="!authentication.isAuth">
                 <md-button flex="25" class="md-icon-button"  aria-label="Show Menu">
                     <ng-md-icon icon="plus_one" size="48" style="fill:white;"></ng-md-icon>
                 </md-button>

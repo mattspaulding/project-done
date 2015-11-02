@@ -5,8 +5,33 @@
     })
 
     .controller('jobsDetailsController', function ($scope, $state, $stateParams, Job) {
-         $scope.job = Job.get({ id: $stateParams.jobId }); //Get a single job.Issues a GET to /api/jobs/:id
-
+        $scope.job = Job.get({ id: $stateParams.jobId }); //Get a single job.Issues a GET to /api/jobs/:id
+        $scope.bids = [
+            {
+                bidId: 1,
+                name: 'Bob',
+                amount: 100,
+                description: 'I\'m the guy you\'re looking for.'
+            },
+        {
+            bidId: 2,
+            name: 'Jill',
+            amount: 200,
+            description: 'I can do that!'
+        },
+        {
+            bidId: 3,
+            name: 'Jack',
+            amount: 100,
+            description: 'I can come over right now.'
+        },
+        {
+            bidId: 4,
+            name: 'Nancy',
+            amount: 50,
+            description: 'Best price always.'
+        }
+        ];
          $scope.deleteJob = function (job) { // Delete a job. Issues a DELETE to /api/jobs/:id
              job.$delete(function () {
                  $state.go('jobs');
@@ -14,11 +39,22 @@
          };
     })
 
-    .controller('jobsAddController', function ($scope, $state, $stateParams, Job) {
+    .controller('jobsImageUploadController', function ($scope, $state, $stateParams, fileUpload,ngAuthSettings) {
+        debugger;
+        $scope.uploadFile = function () {
+            debugger;
+            var file = $scope.imageData;
+            console.log('file is ');
+            console.dir(file);
+            var uploadUrl = ngAuthSettings.apiServiceBaseUri + "/api/jobs/Image";
+            fileUpload.uploadFileToUrl(file, uploadUrl);
+        };
+    }).controller('jobsAddController', function ($scope, $state, $stateParams, Job) {
         $scope.message = "";
         $scope.job = new Job();  //create new job instance. Properties will be set via ng-model on UI
 
         $scope.addJob = function () { //create a new job. Issues a POST to /api/jobs
+            debugger;
             $scope.job.$save(function () {
                 $state.go('jobs'); // on success go back to home i.e. jobs state.
             });

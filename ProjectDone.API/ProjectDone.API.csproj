@@ -219,6 +219,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationUsersController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -245,8 +246,13 @@
     <Compile Include="Migrations\201510090349384_AddJobs.Designer.cs">
       <DependentUpon>201510090349384_AddJobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511020447403_AddImageToJob.cs" />
+    <Compile Include="Migrations\201511020447403_AddImageToJob.Designer.cs">
+      <DependentUpon>201511020447403_AddImageToJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\Bid.cs" />
     <Compile Include="Models\IdentityViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -315,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="JobImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -339,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510090349384_AddJobs.resx">
       <DependentUpon>201510090349384_AddJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511020447403_AddImageToJob.resx">
+      <DependentUpon>201511020447403_AddImageToJob.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

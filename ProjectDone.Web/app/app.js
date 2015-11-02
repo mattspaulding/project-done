@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('App', ['ui.router', 'ngResource', 'App.valuesControllers', 'App.valuesServices', 'App.jobsControllers', 'App.jobsServices', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngMdIcons']);
+var app = angular.module('App', ['ui.router', 'ngResource', 'ngFileUpload', 'App.valuesControllers', 'App.valuesServices', 'App.jobsControllers', 'App.jobsServices', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngMdIcons']);
 
 app.config(function ($stateProvider,$urlRouterProvider) {
 
@@ -64,6 +64,12 @@ app.config(function ($stateProvider,$urlRouterProvider) {
         templateUrl: "/app/views/jobs/index.html"
     });
 
+    $stateProvider.state("jobsImageUpload", {
+        url: "/jobs/imageUpload",
+        controller: "jobsImageUploadController",
+        templateUrl: "/app/views/jobs/imageUpload.html"
+    });
+
     $stateProvider.state("jobsAdd", {
         url: "/jobs/add",
         controller: "jobsAddController",
@@ -92,8 +98,8 @@ app.config(function ($mdThemingProvider) {
     .backgroundPalette('grey');
 });
 
-//var serviceBase = 'http://localhost:49512/';
-var serviceBase = 'http://projectdoneapidev.azurewebsites.net/';
+var serviceBase = 'http://localhost:49512/';
+//var serviceBase = 'http://projectdoneapidev.azurewebsites.net/';
 var clientId = 'consoleApp';
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
