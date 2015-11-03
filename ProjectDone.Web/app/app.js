@@ -98,8 +98,8 @@ app.config(function ($mdThemingProvider) {
     .backgroundPalette('grey');
 });
 
-var serviceBase = 'http://localhost:49512/';
-//var serviceBase = 'http://projectdoneapidev.azurewebsites.net/';
+//var serviceBase = 'http://localhost:49512/';
+var serviceBase = 'http://projectdoneapidev.azurewebsites.net/';
 var clientId = 'consoleApp';
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,

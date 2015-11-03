@@ -52,6 +52,11 @@
                 debugger;
                 $scope.go('jobs/add');
             });
+
+
+          
+
+            
         };
     }).controller('jobsAddController', function ($scope, $state, $stateParams, localStorageService, Job) {
         $scope.message = "";
