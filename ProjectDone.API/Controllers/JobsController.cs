@@ -108,10 +108,11 @@ namespace ProjectDone.API.Controllers
                 foreach (string file in httpRequest.Files)
                 {
                     var postedFile = httpRequest.Files[file];
-                    var filePath = HttpContext.Current.Server.MapPath("~/JobImages/" + postedFile.FileName + "_" + DateTime.Now.ToFileTimeUtc());
+                    fullFilename = DateTime.Now.ToFileTimeUtc().ToString() + "_" + postedFile.FileName;
+                    var filePath = HttpContext.Current.Server.MapPath("~/JobImages/" + fullFilename);
                     postedFile.SaveAs(filePath);
 
-                    fullFilename = postedFile.FileName + "_" + DateTime.Now.ToFileTimeUtc();
+                  
                 }
                 result = Request.CreateResponse(HttpStatusCode.Created, fullFilename);
             }

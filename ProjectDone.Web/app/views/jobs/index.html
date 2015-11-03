@@ -1,19 +1,20 @@
 ﻿<div>
-    <div layout="row" layout-sm="column" layout-align="center center" ng-show="data.loading">
+    <div layout="row" layout-sm="column" layout-align="center center" ng-show="loading">
         <md-progress-linear md-mode="indeterminate"></md-progress-linear>
     </div>
-    <div ng-if="!jobs.length">
-        <h2>No projects</h2>
-        <p>Hello. Welcome to your projects page. Here you will find a list of all of your projects and their status.</p>
-        <p>Let's get started by posting your first project.</p>
-        <md-button class=" md-primary md-raised" ng-click="go('/jobs/add')">
-            Post first project
-        </md-button>
-    </div>
-      <md-list class="md-primary" flex ng-if="jobs.length">
+    <div ng-hide="loading" >
+        <div ng-if="!jobs.length">
+            <h2>No projects</h2>
+            <p>Hello. Welcome to your projects page. Here you will find a list of all of your projects and their status.</p>
+            <p>Let's get started by posting your first project.</p>
+            <md-button class=" md-primary md-raised" ng-click="go('/jobs/add')">
+                Post first project
+            </md-button>
+        </div>
+        <md-list class="md-primary" flex ng-if="jobs.length">
             <md-subheader class="md-no-sticky">My Jobs</md-subheader>
             <md-list-item ng-click="go('/jobs/details/'+job.jobId)" class="md-primary md-3-line md-long-text md-whiteframe-z1" ng-repeat="job in jobs">
-                <img ng-src="http://lorempixel.com/100/100/nature/{{job.jobId}}" class="md-avatar" style="width:60px;height:60px;" />
+                <img ng-src="{{job.imagePath}}" class="md-avatar" style="width:60px;height:60px;" />
 
                 <div class="md-list-item-text">
                     <h3>{{job.name}}</h3>
@@ -27,4 +28,5 @@
             </md-button>
         </div>
 
+    </div>
 </div>

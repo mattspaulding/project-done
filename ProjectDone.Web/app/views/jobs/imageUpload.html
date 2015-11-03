@@ -9,27 +9,12 @@
                    accept="image/*"
                    file-model="imageData"
                    capture="camera">
-            <md-input-container flex>
-                <label>Name</label>
-                <input required name="name" ng-maxlength="20" md-maxlength="20" ng-model="job.name">
-                <div ng-messages="form.name.$error">
-                    <div ng-message="required">required</div>
-                    <div ng-message="maxlength">too long</div>
-                </div>
-            </md-input-container>
-            <md-input-container flex>
-                <label>Description</label>
-                <textarea required ng-model="job.description" name="description" columns="2" ng-maxlength="100" md-maxlength="100"></textarea>
-                <div ng-messages="form.description.$error">
-                    <div ng-message="maxlength">too long</div>
-                </div>
-            </md-input-container>
+          
             <div layout="row" layout-align="end">
                 <md-button id="submitButton" class="md-primary md-raised" ng-click="uploadFile()">Submit</md-button>
+                <md-button>skip this step</md-button>
             </div>
-            <div ng-hide="message == ''" ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
-                {{message}}
-            </div>
+           
         </form>
     </div>
 </div>

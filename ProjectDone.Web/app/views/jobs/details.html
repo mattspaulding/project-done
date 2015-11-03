@@ -21,9 +21,7 @@
         </md-list>
          <form name="form">
             <h2>Job Details</h2>
-            <div flex layout="row" height="300px;" layout-align="center">
-                <img ng-src="http://lorempixel.com/300/300/nature/{{job.jobId}}" class="md-avatar" />
-            </div>
+             <img src="{{job.imagePath}}" width="100%" />
             <md-input-container flex>
                 <label>Name</label>
                 <input disabled ng-model="job.name">

@@ -12,7 +12,7 @@ namespace ProjectDone.API.Models
     public class Job
     {
         public int JobId { get; set; }
-        public string Image { get; set; }
+        public string ImagePath { get; set; }
         [Required]
         [MaxLength(20)]
         public string Name { get; set; }
@@ -28,7 +28,7 @@ namespace ProjectDone.API.Models
     }
     public class JobRequest
     {
-        public HttpPostedFileBase ImageFile { get; set; }
+        public string ImagePath { get; set; }
         [Required]
         [MaxLength(20)]
         public string Name { get; set; }
@@ -39,7 +39,7 @@ namespace ProjectDone.API.Models
     public class JobResponse
     {
         public int JobId { get; set; }
-        public string Image { get; set; }
+        public string ImagePath { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }

@@ -2,9 +2,7 @@
     <div flex flex-gt-sm="50" offset-gt-sm="25">
         <form name="form">
             <h2>Edit Job</h2>
-            <div flex layout="row" layout-align="center">
-                <img ng-src="http://lorempixel.com/300/300/nature/{{job.jobId}}" class="md-avatar" style="max-width:300px;" />
-            </div>
+            <img src="{{job.imagePath}}" width="100%" />
             <md-input-container flex>
                 <label>Name</label>
                 <input required name="name" ng-maxlength="20" md-maxlength="20" ng-model="job.name">

@@ -1,7 +1,11 @@
 ﻿angular.module('App.jobsControllers', [])
 
-    .controller('jobsIndexController', function ($scope,  $window, Job) {
-        $scope.jobs = Job.query(); //fetch all jobs. Issues a GET to /api/jobs  
+    .controller('jobsIndexController', function ($scope, $window, Job) {
+        $scope.loading = true;
+        $scope.jobs = Job.query(function () {
+            $scope.loading = false;
+
+        });
     })
 
     .controller('jobsDetailsController', function ($scope, $state, $stateParams, Job) {
@@ -40,19 +44,21 @@
     })
 
     .controller('jobsImageUploadController', function ($scope, $state, $stateParams, fileUpload,ngAuthSettings) {
-        debugger;
         $scope.uploadFile = function () {
             debugger;
             var file = $scope.imageData;
-            console.log('file is ');
-            console.dir(file);
             var uploadUrl = ngAuthSettings.apiServiceBaseUri + "/api/jobs/Image";
-            fileUpload.uploadFileToUrl(file, uploadUrl);
+            fileUpload.uploadFileToUrl(file, uploadUrl).then(function (result) {
+                debugger;
+                $scope.go('jobs/add');
+            });
         };
-    }).controller('jobsAddController', function ($scope, $state, $stateParams, Job) {
+    }).controller('jobsAddController', function ($scope, $state, $stateParams, localStorageService, Job) {
         $scope.message = "";
+        debugger;
         $scope.job = new Job();  //create new job instance. Properties will be set via ng-model on UI
-
+        $scope.job.imagePath
+            = localStorageService.get('imagePath');
         $scope.addJob = function () { //create a new job. Issues a POST to /api/jobs
             debugger;
             $scope.job.$save(function () {
