@@ -13,15 +13,22 @@
                     </div>
                     <p>{{bid.description}}</p>
                     <div flex layout="row">
-                        <div flex="50"><img src="app/images/badges.png" width="70px" /></div>
+                        <div flex="50">
+                            <span>
+                                <img src="app/images/badges.png" width="70px" />
+                                <md-tooltip md-direction="right">
+                                    Certified Plumber - lic# 1234-5678
+                                </md-tooltip>
+                            </span>
+                        </div>
                         <div flex style="text-align:right;"><img src="app/images/five-stars.jpg" width="100px" /></div>
                     </div>
                 </div>
             </md-list-item>
         </md-list>
-         <form name="form">
+        <form name="form">
             <h2>Job Details</h2>
-             <img src="{{job.imagePath}}" width="100%" />
+            <img src="{{job.imagePath}}" width="100%" />
             <md-input-container flex>
                 <label>Name</label>
                 <input disabled ng-model="job.name">
