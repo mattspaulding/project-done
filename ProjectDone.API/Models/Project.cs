@@ -9,9 +9,9 @@ using System.Web.Mvc;
 
 namespace ProjectDone.API.Models
 {
-    public class Job
+    public class Project
     {
-        public int JobId { get; set; }
+        public int ProjectId { get; set; }
         public string ImagePath { get; set; }
         [Required]
         [MaxLength(20)]
@@ -26,7 +26,7 @@ namespace ProjectDone.API.Models
         public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual ICollection<Bid> Bids { get; set; }
     }
-    public class JobRequest
+    public class ProjectRequest
     {
         public string ImagePath { get; set; }
         [Required]
@@ -36,9 +36,9 @@ namespace ProjectDone.API.Models
         [MaxLength(100)]
         public string Description { get; set; }
     }
-    public class JobResponse
+    public class ProjectResponse
     {
-        public int JobId { get; set; }
+        public int ProjectId { get; set; }
         public string ImagePath { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

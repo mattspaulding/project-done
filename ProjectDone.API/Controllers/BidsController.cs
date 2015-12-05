@@ -92,7 +92,7 @@ namespace WebApplication7.Controllers
                 return BadRequest(ModelState);
             }
 
-            Mapper.CreateMap<BidRequest, Job>();
+            Mapper.CreateMap<BidRequest, Project>();
             var bid = Mapper.Map<Bid>(bidRequest);
             // Set creation date
             bid.CreationDate = DateTime.Now;

@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('App', ['ui.router', 'ngResource', 'ngFileUpload', 'App.valuesControllers', 'App.valuesServices', 'App.jobsControllers', 'App.jobsServices', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngMdIcons']);
+var app = angular.module('App', ['ui.router', 'ngResource', 'ngFileUpload', 'App.valuesControllers', 'App.valuesServices', 'App.projectsControllers', 'App.projectsServices', 'LocalStorageModule', 'ngMaterial', 'ngMessages', 'ngMdIcons']);
 
 app.config(function ($stateProvider,$urlRouterProvider) {
 
@@ -58,34 +58,34 @@ app.config(function ($stateProvider,$urlRouterProvider) {
         controller: "valuesDetailsController",
         templateUrl: "/app/views/values/details.html"
     });
-    $stateProvider.state("jobs", {
-        url: "/jobs",
-        controller: "jobsIndexController",
-        templateUrl: "/app/views/jobs/index.html"
+    $stateProvider.state("projects", {
+        url: "/projects",
+        controller: "projectsIndexController",
+        templateUrl: "/app/views/projects/index.html"
     });
 
-    $stateProvider.state("jobsImageUpload", {
-        url: "/jobs/imageUpload",
-        controller: "jobsImageUploadController",
-        templateUrl: "/app/views/jobs/imageUpload.html"
+    $stateProvider.state("projectsImageUpload", {
+        url: "/projects/imageUpload",
+        controller: "projectsImageUploadController",
+        templateUrl: "/app/views/projects/imageUpload.html"
     });
 
-    $stateProvider.state("jobsAdd", {
-        url: "/jobs/add",
-        controller: "jobsAddController",
-        templateUrl: "/app/views/jobs/add.html"
+    $stateProvider.state("projectsAdd", {
+        url: "/projects/add",
+        controller: "projectsAddController",
+        templateUrl: "/app/views/projects/add.html"
     });
 
-    $stateProvider.state("jobsEdit", {
-        url: "/jobs/edit/:jobId",
-        controller: "jobsEditController",
-        templateUrl: "/app/views/jobs/edit.html"
+    $stateProvider.state("projectsEdit", {
+        url: "/projects/edit/:projectId",
+        controller: "projectsEditController",
+        templateUrl: "/app/views/projects/edit.html"
     });
 
-    $stateProvider.state("jobsDetails", {
-        url: "/jobs/details/:jobId",
-        controller: "jobsDetailsController",
-        templateUrl: "/app/views/jobs/details.html"
+    $stateProvider.state("projectsDetails", {
+        url: "/projects/details/:projectId",
+        controller: "projectsDetailsController",
+        templateUrl: "/app/views/projects/details.html"
     });
 
 });

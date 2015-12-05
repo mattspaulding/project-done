@@ -3,12 +3,12 @@ namespace ProjectDone.API.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddImageToJob : DbMigration
+    public partial class AddImageToProject : DbMigration
     {
         public override void Up()
         {
-            DropForeignKey("dbo.Jobs", "ApplicationUserId", "dbo.AspNetUsers");
-            DropIndex("dbo.Jobs", new[] { "ApplicationUserId" });
+            DropForeignKey("dbo.Projects", "ApplicationUserId", "dbo.AspNetUsers");
+            DropIndex("dbo.Projects", new[] { "ApplicationUserId" });
             CreateTable(
                 "dbo.Bids",
                 c => new
@@ -19,33 +19,33 @@ namespace ProjectDone.API.Migrations
                         CreationDate = c.DateTime(nullable: false),
                         BidState = c.String(),
                         ApplicationUserId = c.String(maxLength: 128),
-                        Job_JobId = c.Int(),
+                        Project_ProjectId = c.Int(),
                     })
                 .PrimaryKey(t => t.BidId)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUserId)
-                .ForeignKey("dbo.Jobs", t => t.Job_JobId)
+                .ForeignKey("dbo.Projects", t => t.Project_ProjectId)
                 .Index(t => t.ApplicationUserId)
-                .Index(t => t.Job_JobId);
+                .Index(t => t.Project_ProjectId);
             
-            AddColumn("dbo.Jobs", "Image", c => c.String());
-            AlterColumn("dbo.Jobs", "ApplicationUserId", c => c.String(maxLength: 128));
-            CreateIndex("dbo.Jobs", "ApplicationUserId");
-            AddForeignKey("dbo.Jobs", "ApplicationUserId", "dbo.AspNetUsers", "Id");
+            AddColumn("dbo.Projects", "Image", c => c.String());
+            AlterColumn("dbo.Projects", "ApplicationUserId", c => c.String(maxLength: 128));
+            CreateIndex("dbo.Projects", "ApplicationUserId");
+            AddForeignKey("dbo.Projects", "ApplicationUserId", "dbo.AspNetUsers", "Id");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Jobs", "ApplicationUserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Bids", "Job_JobId", "dbo.Jobs");
+            DropForeignKey("dbo.Projects", "ApplicationUserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Bids", "Project_ProjectId", "dbo.Projects");
             DropForeignKey("dbo.Bids", "ApplicationUserId", "dbo.AspNetUsers");
-            DropIndex("dbo.Jobs", new[] { "ApplicationUserId" });
-            DropIndex("dbo.Bids", new[] { "Job_JobId" });
+            DropIndex("dbo.Projects", new[] { "ApplicationUserId" });
+            DropIndex("dbo.Bids", new[] { "Project_ProjectId" });
             DropIndex("dbo.Bids", new[] { "ApplicationUserId" });
-            AlterColumn("dbo.Jobs", "ApplicationUserId", c => c.String(nullable: false, maxLength: 128));
-            DropColumn("dbo.Jobs", "Image");
+            AlterColumn("dbo.Projects", "ApplicationUserId", c => c.String(nullable: false, maxLength: 128));
+            DropColumn("dbo.Projects", "Image");
             DropTable("dbo.Bids");
-            CreateIndex("dbo.Jobs", "ApplicationUserId");
-            AddForeignKey("dbo.Jobs", "ApplicationUserId", "dbo.AspNetUsers", "Id", cascadeDelete: true);
+            CreateIndex("dbo.Projects", "ApplicationUserId");
+            AddForeignKey("dbo.Projects", "ApplicationUserId", "dbo.AspNetUsers", "Id", cascadeDelete: true);
         }
     }
 }

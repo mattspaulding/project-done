@@ -7,14 +7,14 @@ namespace ProjectDone.API.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Jobs", "ImagePath", c => c.String());
-            DropColumn("dbo.Jobs", "Image");
+            AddColumn("dbo.Projects", "ImagePath", c => c.String());
+            DropColumn("dbo.Projects", "Image");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Jobs", "Image", c => c.String());
-            DropColumn("dbo.Jobs", "ImagePath");
+            AddColumn("dbo.Projects", "Image", c => c.String());
+            DropColumn("dbo.Projects", "ImagePath");
         }
     }
 }

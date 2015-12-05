@@ -27,20 +27,20 @@
             </md-list-item>
         </md-list>
         <form name="form">
-            <h2>Job Details</h2>
-            <img src="{{job.imagePath}}" width="100%" />
+            <h2>Project Details</h2>
+            <img src="{{project.imagePath}}" width="100%" />
             <md-input-container flex>
                 <label>Name</label>
-                <input disabled ng-model="job.name">
+                <input disabled ng-model="project.name">
             </md-input-container>
             <md-input-container flex>
                 <label>Description</label>
-                <textarea disabled ng-model="job.description" columns="1"></textarea>
+                <textarea disabled ng-model="project.description" columns="1"></textarea>
             </md-input-container>
             <div layout="row" layout-align="end">
-                <md-button class="md-warn" data-ng-click="deleteJob(job)">Delete</md-button>
-                <md-button class="md-accent" data-ng-click="go('/jobs/edit/'+job.jobId)">Edit</md-button>
-                <md-button class="md-primary md-raised" type="submit" data-ng-click="go('/jobs')">Back</md-button>
+                <md-button class="md-warn" data-ng-click="deleteProject(project)">Delete</md-button>
+                <md-button class="md-accent" data-ng-click="go('/projects/edit/'+project.projectId)">Edit</md-button>
+                <md-button class="md-primary md-raised" type="submit" data-ng-click="go('/projects')">Back</md-button>
             </div>
 
         </form>

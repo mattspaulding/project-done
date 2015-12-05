@@ -3,28 +3,28 @@
         <md-progress-linear md-mode="indeterminate"></md-progress-linear>
     </div>
     <div ng-hide="loading" >
-        <div ng-if="!jobs.length">
+        <div ng-if="!projects.length">
             <h2>No projects</h2>
             <p>Hello. Welcome to your projects page. Here you will find a list of all of your projects and their status.</p>
             <p>Let's get started by posting your first project.</p>
-            <md-button class=" md-primary md-raised" ng-click="go('/jobs/add')">
+            <md-button class=" md-primary md-raised" ng-click="go('/projects/add')">
                 Post first project
             </md-button>
         </div>
-        <md-list class="md-primary" flex ng-if="jobs.length">
-            <md-subheader class="md-no-sticky">My Jobs</md-subheader>
-            <md-list-item ng-click="go('/jobs/details/'+job.jobId)" class="md-primary md-3-line md-long-text md-whiteframe-z1" ng-repeat="job in jobs">
-                <img ng-src="{{job.imagePath}}" class="md-avatar" style="width:60px;height:60px;" />
+        <md-list class="md-primary" flex ng-if="projects.length">
+            <md-subheader class="md-no-sticky">My Projects</md-subheader>
+            <md-list-item ng-click="go('/projects/details/'+project.projectId)" class="md-primary md-3-line md-long-text md-whiteframe-z1" ng-repeat="project in projects">
+                <img ng-src="{{project.imagePath}}" class="md-avatar" style="width:60px;height:60px;" />
 
                 <div class="md-list-item-text">
-                    <h3>{{job.name}}</h3>
-                    <p>{{job.description}}</p>
+                    <h3>{{project.name}}</h3>
+                    <p>{{project.description}}</p>
                 </div>
             </md-list-item>
         </md-list>
         <div layout="row" layout-align="end">
             <md-button class="md-fab md-fab-top-right md-primary md-icon-button">
-                <ng-md-icon icon="plus_one" size="50" style="fill:white;" ng-click="go('/jobs/imageUpload')">   </ng-md-icon>
+                <ng-md-icon icon="plus_one" size="50" style="fill:white;" ng-click="go('/projects/imageUpload')">   </ng-md-icon>
             </md-button>
         </div>
 

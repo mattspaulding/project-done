@@ -26,17 +26,15 @@
     <script src="/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
     <script src="/bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/moment/moment.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
-    <script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+     <script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     <!-- Load app main script -->
     <script src="app/app.js"></script>
     <!-- Load services -->
     <script src="app/services/authInterceptorService.js"></script>
     <script src="app/services/authService.js"></script>
-    <script src="app/services/jobsService.js"></script>
+    <script src="app/services/projectsService.js"></script>
     <script src="app/services/valuesService.js"></script>
     <script src="app/services/userService.js"></script>
     <script src="app/services/fileUploadService.js"></script>
@@ -46,7 +44,7 @@
     <script src="app/controllers/userController.js"></script>
     <script src="app/controllers/loginController.js"></script>
     <script src="app/controllers/signupController.js"></script>
-    <script src="app/controllers/jobsController.js"></script>
+    <script src="app/controllers/projectsController.js"></script>
     <script src="app/controllers/valuesController.js"></script>
     <script src="app/controllers/sideNavLeftController.js"></script>
     <!-- Load custom filters -->
@@ -87,20 +85,20 @@
                     <span style="font-size:18px;color:white;">Hi {{authentication.userName}}</span>
                 </div>
             </div>
-            <div class="md-toolbar-tools" ng-click="go('/jobs');menuToggle();" ng-hide="!authentication.isAuth">
+            <div class="md-toolbar-tools" ng-click="go('/projects');menuToggle();" ng-hide="!authentication.isAuth">
                 <md-button flex="25" class="md-icon-button"  aria-label="Show Menu">
                     <ng-md-icon icon="stars" size="48" style="fill:white;"></ng-md-icon>
                 </md-button>
                 <div flex layout="row" layout-align="start center">
-                    <span style="font-size:18px;color:white;">My Jobs</span>
+                    <span style="font-size:18px;color:white;">My Projects</span>
                 </div>
             </div>
-            <div class="md-toolbar-tools" ng-click="go('/jobs/imageUpload');menuToggle();" ng-hide="!authentication.isAuth">
+            <div class="md-toolbar-tools" ng-click="go('/projects/imageUpload');menuToggle();" ng-hide="!authentication.isAuth">
                 <md-button flex="25" class="md-icon-button"  aria-label="Show Menu">
                     <ng-md-icon icon="plus_one" size="48" style="fill:white;"></ng-md-icon>
                 </md-button>
                 <div flex layout="row" layout-align="start center">
-                    <span style="font-size:18px;color:white;">Add Jobs</span>
+                    <span style="font-size:18px;color:white;">Add Projects</span>
                 </div>
             </div>
 

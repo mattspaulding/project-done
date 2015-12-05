@@ -2,12 +2,12 @@
     <div flex flex-gt-sm="50" offset-gt-sm="25">
        
         <form name="form">
-            <h2>Add Job</h2>
+            <h2>Add Project</h2>
 
-           <img src="{{job.imagePath}}" width="100%" />
+           <img src="{{project.imagePath}}" width="100%" />
             <md-input-container flex>
                 <label>Name</label>
-                <input required name="name" ng-maxlength="20" md-maxlength="20" ng-model="job.name">
+                <input required name="name" ng-maxlength="20" md-maxlength="20" ng-model="project.name">
                 <div ng-messages="form.name.$error">
                     <div ng-message="required">required</div>
                     <div ng-message="maxlength">too long</div>
@@ -15,13 +15,13 @@
             </md-input-container>
             <md-input-container flex>
                 <label>Description</label>
-                <textarea required ng-model="job.description" name="description" columns="2" ng-maxlength="100" md-maxlength="100"></textarea>
+                <textarea required ng-model="project.description" name="description" columns="2" ng-maxlength="100" md-maxlength="100"></textarea>
                 <div ng-messages="form.description.$error">
                     <div ng-message="maxlength">too long</div>
                 </div>
             </md-input-container>
             <div layout="row" layout-align="end">
-                <md-button class="md-primary md-raised" type="submit" data-ng-click="addJob()">Submit</md-button>
+                <md-button class="md-primary md-raised" type="submit" data-ng-click="addProject()">Submit</md-button>
             </div>
             <div ng-hide="message == ''" ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
                 {{message}}

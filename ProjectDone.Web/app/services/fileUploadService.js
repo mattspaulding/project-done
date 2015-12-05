@@ -8,7 +8,7 @@ app.service('fileUpload', ['$http', 'localStorageService', 'ngAuthSettings',func
                 headers: {'Content-Type': undefined}
             })
             .success(function (result) {
-                localStorageService.set('imagePath', ngAuthSettings.apiServiceBaseUri+"JobImages/"+result);
+                localStorageService.set('imagePath', ngAuthSettings.apiServiceBaseUri+"ProjectImages/"+result);
                 return result;
             })
             .error(function (data) {

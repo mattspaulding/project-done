@@ -21,7 +21,7 @@ namespace ProjectDone.API.Models
 
 
         public virtual ICollection<Value> Values { get; set; }
-        public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<Project> Projects { get; set; }
         public virtual ICollection<Bid> Bids { get; set; }
 
     }
@@ -34,7 +34,7 @@ namespace ProjectDone.API.Models
         }
 
         public DbSet<Value> Values { get; set; }
-        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Project> Projects { get; set; }
         public DbSet<Bid> Bids { get; set; }
 
 

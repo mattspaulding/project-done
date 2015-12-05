@@ -7,13 +7,13 @@ namespace ProjectDone.API.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddJobs : IMigrationMetadata
+    public sealed partial class AddProjects : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddJobs));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddProjects));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510090349384_AddJobs"; }
+            get { return "201510090349384_AddProjects"; }
         }
         
         string IMigrationMetadata.Source

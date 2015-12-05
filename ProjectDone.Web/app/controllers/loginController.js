@@ -12,7 +12,7 @@ app.controller('loginController', ['$scope', '$location', 'authService', 'ngAuth
     $scope.login = function () {
 
         authService.login($scope.loginData).then(function (response) {
-            $location.path('/jobs');
+            $location.path('/projects');
         },
          function (err) {
              $scope.message = err.responseText;
